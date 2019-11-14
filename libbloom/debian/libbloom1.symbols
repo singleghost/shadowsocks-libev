@@ -1,0 +1,10 @@
+libbloom.so.1 libbloom1 #MINVER#
+ bloom_add@Base 1.5
+ bloom_check@Base 1.5
+ bloom_free@Base 1.5
+ bloom_init@Base 1.5
+ bloom_init_size@Base 1.5
+ bloom_print@Base 1.5
+ bloom_reset@Base 1.6
+ bloom_version@Base 1.5
+ murmurhash2@Base 1.5

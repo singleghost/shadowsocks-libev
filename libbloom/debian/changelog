@@ -1,0 +1,143 @@
+libbloom (1.6-2) unstable; urgency=medium
+
+  * Team upload.
+  * debian/libbloom1.symbols: Add new symbol.
+  * debian/control:
+    + Bump debhelper compat to v12.
+    + Bump Standards-Version to 4.4.1.
+
+ -- Boyuan Yang <byang@debian.org>  Sun, 13 Oct 2019 13:58:15 -0400
+
+libbloom (1.6-1) unstable; urgency=medium
+
+  * New upstream release: 1.6
+    - Added a simple bloom_reset() function.
+    - Performance boost on membership test if element not present.
+    - Test cleanup and coverage.
+  * debian/control:
+    - Use tracker mail as maintainer address.
+  * debian/patches:
+    - Refresh patch: 0001
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Sat, 17 Aug 2019 19:24:43 +0900
+
+libbloom (1.5-5) unstable; urgency=medium
+
+  [ Helmut Grohne ]
+  * Fix FTCBFS: (Closes: #923264)
+    + Let dh_auto_build pass cross tools to make.
+    + Honour DEB_BUILD_OPTIONS=nocheck.
+    + Fix host/target confusion.
+    + Let dpkg's architecture.mk initialize DEB_HOST_MULTIARCH.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 21 Mar 2019 14:14:36 +0900
+
+libbloom (1.5-4) unstable; urgency=medium
+
+  * debian/control:
+    - Migrate Vcs-* from alioth to salsa.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Sun, 10 Jun 2018 18:17:46 +0900
+
+libbloom (1.5-3) unstable; urgency=medium
+
+  * debian/debian/libbloom1.symbols:
+    - Add symbols file for libbloom1.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Sun, 22 Oct 2017 23:13:38 +0900
+
+libbloom (1.5-2) unstable; urgency=medium
+
+  * debian/watch:
+    - Update to match with the filename in pristine-tar.
+  * debian/tests:
+    - Add upstream test suite for autopkgtest.
+  * debian/control:
+    - Bump up Standards-Version to 4.1.1 (with autopkgtest above).
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Tue, 17 Oct 2017 23:58:51 +0900
+
+libbloom (1.5-1~bpo8+1) jessie-backports-sloppy; urgency=medium
+
+  * Rebuild for jessie-backports-sloppy.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Wed, 05 Jul 2017 23:12:25 +0900
+
+libbloom (1.5-1~bpo9+1) stretch-backports; urgency=medium
+
+  * Rebuild for stretch-backports.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Fri, 30 Jun 2017 22:38:16 +0900
+
+libbloom (1.5-1) unstable; urgency=medium
+
+  * New upstream version 1.5 (Closes: #862769)
+  * debian/patches:
+    - Remove backported patches.
+  * debian/copyright:
+    - Update the copyright year.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Sat, 10 Jun 2017 00:50:27 +0900
+
+libbloom (1.4-6) unstable; urgency=medium
+
+  * Fix the typo of bug number in previous release (1.4-5).
+  * debian/patches:
+    - Amend previous patch (0004) that still FTBFS on Hurd.
+      (Closes: #860506).
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Tue, 16 May 2017 18:52:18 +0900
+
+libbloom (1.4-5) unstable; urgency=medium
+
+  * debian/patches:
+    - Amend previous patch (0004) that FTBFS on buildd all ARCHs.
+      (Closes: #860506, #862445).
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Sat, 13 May 2017 10:53:19 +0900
+
+libbloom (1.4-4) unstable; urgency=medium
+
+  * debian/patches:
+    - Add patch to extend RPATH setting to GNU/kFreeBSD and Hurd.
+      Hopefully to fix FTBFS issue on the two platforms.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Fri, 12 May 2017 23:39:46 +0900
+
+libbloom (1.4-3) unstable; urgency=medium
+
+  * debian/copyright:
+    - Move the paragraph of MIT/Expat license to the right position.
+      Text copy of MIT/Expat license is from debmake package:
+        /usr/share/debmake/extra4/Expat
+  * debian/control:
+    - Add collab-maint Vcs repo.
+  * debian/rules:
+    - Fix Multi-Arch triplet directory.
+      Install library files into /usr/lib/${DEB_TARGET_MULTIARCH}
+      directory, instead of /usr/lib/${DEB_TARGET_GNU_TYPE}.
+      Should be the right triplet directory this time.
+  * debian/watch:
+    - Add a missing quotes mark after the equal mark. Now uscan
+      command can work as expected.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Fri, 21 Apr 2017 22:28:08 +0900
+
+libbloom (1.4-2) unstable; urgency=medium
+
+  * debian/patches:
+    - backport a patch from upstream to enable BITS setting.
+  * debian/rules:
+    - Set BITS=default when building/testing according to upstream's
+      advice:
+        https://github.com/jvirkki/libbloom/issues/6
+      Apparently the BITS setting (-m32/-m64) is merely for solaris,
+      so we simply ignore this in debian.
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Thu, 13 Apr 2017 01:22:07 +0900
+
+libbloom (1.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #858026).
+
+ -- Roger Shimizu <rogershimizu@gmail.com>  Mon, 20 Mar 2017 17:09:44 +0900

@@ -1,0 +1,32 @@
+Source: libbloom
+Section: libs
+Priority: optional
+Maintainer: Debian Bridges Team <team+bridges@tracker.debian.org>
+Uploaders: Roger Shimizu <rogershimizu@gmail.com>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.4.1
+Rules-Requires-Root: no
+Homepage: https://github.com/jvirkki/libbloom
+Vcs-Git: https://salsa.debian.org/bridges-team/libbloom.git
+Vcs-Browser: https://salsa.debian.org/bridges-team/libbloom
+
+Package: libbloom-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libbloom1 (= ${binary:Version}),${misc:Depends}
+Description: simple and small bloom filter implementation in C (development files)
+ It implements bloom filters:
+  http://en.wikipedia.org/wiki/Bloom_filter
+ .
+ This package provides C header files for the library.
+
+Package: libbloom1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: simple and small bloom filter implementation in C
+ It implements bloom filters:
+  http://en.wikipedia.org/wiki/Bloom_filter
+ .
+ This package provides shared library.
