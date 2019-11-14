@@ -454,7 +454,7 @@ wheezy|precise)
 jessie|stretch|buster|testing|unstable|sid)
 	build_install_sslibev
 	;;
-artful|bionic)
+artful|bionic|cosmic)
 	build_install_libbloom
 	build_install_sslibev
 	build_install_simpleobfs
