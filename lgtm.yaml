@@ -1,0 +1,23 @@
+extraction:
+  javascript:
+    index:
+      include: ""
+      exclude:
+      - "benchmarks"
+      - "test"
+      - "testing"
+      filters:
+      - exclude: "**/*.js"
+      - exclude: "**/*.html"
+      - exclude: "**/*.ts"
+  python:
+    index:
+      include: "aaaa"
+      filters:
+        exclude: "**/*.py"
+  cpp:
+    after_prepare: "mkdir -p ${LGTM_SRC}/build"
+    configure:
+      command: "(cd ${LGTM_SRC}/build; cmake .. -DCMAKE_C_FLAGS='-no-pie')"
+    index:
+      build_command: "(cd ${LGTM_SRC}/build; make)"
